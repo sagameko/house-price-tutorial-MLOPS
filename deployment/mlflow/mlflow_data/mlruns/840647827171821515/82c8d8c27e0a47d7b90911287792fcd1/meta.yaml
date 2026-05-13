@@ -1,0 +1,15 @@
+artifact_uri: /mlflow/artifacts/840647827171821515/82c8d8c27e0a47d7b90911287792fcd1/artifacts
+end_time: 1778644936715
+entry_point_name: ''
+experiment_id: '840647827171821515'
+lifecycle_stage: active
+run_id: 82c8d8c27e0a47d7b90911287792fcd1
+run_name: judicious-fawn-460
+run_uuid: 82c8d8c27e0a47d7b90911287792fcd1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1778644936308
+status: 4
+tags: []
+user_id: nguye

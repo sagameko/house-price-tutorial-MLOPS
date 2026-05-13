@@ -1,14 +1,23 @@
-.venv/
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+conda-meta/
+
+# Jupyter
 .ipynb_checkpoints/
 
-data/raw/
-data/processed/
-model/trained/
-mlruns/
-*.pkl
-*.joblib
-
+# Environment variables
 .env
-.DB_Store
+
+# VSCode
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db

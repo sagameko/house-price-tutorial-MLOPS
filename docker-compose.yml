@@ -1,0 +1,42 @@
+services:
+
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:v2.20.0
+
+    ports:
+      - "5555:5000"
+
+    command: >
+      mlflow server
+      --host 0.0.0.0
+      --port 5000
+      --backend-store-uri /mlflow/mlruns
+      --default-artifact-root /mlflow/artifacts
+
+    volumes:
+      - ./deployment/mlflow/mlflow_data:/mlflow
+
+
+  api:
+    build: .
+
+    ports:
+      - "8000:8000"
+
+    depends_on:
+      - mlflow
+
+    environment:
+      - MLFLOW_TRACKING_URI=http://mlflow:5000
+
+
+  streamlit:
+    build:
+      context: .
+      dockerfile: streamlit_app/Dockerfile
+
+    ports:
+      - "8501:8501"
+
+    depends_on:
+      - api
